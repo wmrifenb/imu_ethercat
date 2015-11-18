@@ -93,7 +93,7 @@ static unsigned int user_alarms = 0;
 // process data
 static uint8_t *domain1_pd = NULL;
 
-#define BusCouplerPos  0, 0
+#define EK1100Pos  0, 0
 #define DigOutSlavePos 0, 2
 #define AnaInSlavePos  0, 3
 //#define AnaOutSlavePos 0, 4
@@ -103,7 +103,7 @@ static uint8_t *domain1_pd = NULL;
 #define Beckhoff_EL2004 0x00000002, 0x07d43052
 #define Beckhoff_EL2032 0x00000002, 0x07f03052
 #define Beckhoff_EL3152 0x00000002, 0x0c503052
-#define Beckhoff_EL3102 0x00000002, 0x0c1e3052
+#define Beckhoff_EL3356 0x00000002, 0x0c1e3052
 #define Beckhoff_EL4112 0x00000002, 0x10103052
 
 // offsets for PDO entries
@@ -409,7 +409,7 @@ int main(int argc, char **argv) {
 #endif
 
 	// Create configuration for bus coupler
-	sc = ecrt_master_slave_config(master, BusCouplerPos, Beckhoff_EK1100);
+	sc = ecrt_master_slave_config(master, EK1100Pos, Beckhoff_EK1100);
 	if (!sc)
 		return -1;
 
